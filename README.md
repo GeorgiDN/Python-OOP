@@ -8,3 +8,5 @@ Online judge system - https://judge.softuni.org/
 ## Table of Contents:
 
 ➡[First Steps in OOP - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/First%20Steps%20in%20OOP%20-%20Lab)
+
+➡[First Steps in OOP - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/First%20Steps%20in%20OOP%20-%20%20Exercise)
