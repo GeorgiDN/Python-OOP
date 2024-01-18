@@ -12,3 +12,5 @@ Online judge system - https://judge.softuni.org/
 ➡[First Steps in OOP - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/First%20Steps%20in%20OOP%20-%20%20Exercise)
 
 ➡[Classes and Objects - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Classes%20and%20Objects%20-%20Lab)
+
+➡[Classes and Objects - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Classes%20and%20Objects%20-%20Exercise)
