@@ -14,3 +14,5 @@ Online judge system - https://judge.softuni.org/
 ➡[Classes and Objects - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Classes%20and%20Objects%20-%20Lab)
 
 ➡[Classes and Objects - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Classes%20and%20Objects%20-%20Exercise)
+
+➡[Inheritance - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Inheritance%20-%20Lab)
