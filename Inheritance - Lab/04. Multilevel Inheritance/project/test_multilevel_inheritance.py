@@ -1,6 +1,6 @@
-from project import Vehicle
-from project import Car
-from project import SportsCar
+from project.vehicle import Vehicle
+from project.car import Car
+from project.sports_car import SportsCar
 
 vehicle = Vehicle()
 print(vehicle.move())
