@@ -1,6 +1,6 @@
-from project import Person
-from project import Employee
-from project import Teacher
+from project.person import Person
+from project.employee import Employee
+from project.teacher import Teacher
 
 person = Person()
 print(person.sleep())
@@ -13,5 +13,5 @@ print(teacher.teach())
 
 print()
 print("Teacher - inherited methods:")
-print(teacher.get_fired())  
-print(teacher.sleep())  
+print(teacher.get_fired())
+print(teacher.sleep())
