@@ -13,9 +13,9 @@ class Trainer:
         return f"Caught {pokemon.name} with health {pokemon.health}"
 
     def release_pokemon(self, pokemon_name: str):
-        found_pokemon = self._check_for_pokemon(pokemon_name)
-        if found_pokemon:
-            self.pokemons.remove(found_pokemon)
+        caught_pokemon = self._check_for_pokemon(pokemon_name)
+        if caught_pokemon:
+            self.pokemons.remove(caught_pokemon)
             return f"You have released {pokemon_name}"
         return "Pokemon is not caught"
 
@@ -42,3 +42,4 @@ print(trainer.add_pokemon(second_pokemon))
 print(trainer.release_pokemon("Pikachu"))
 print(trainer.release_pokemon("Pikachu"))
 print(trainer.trainer_data())
+
