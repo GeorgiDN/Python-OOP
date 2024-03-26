@@ -20,3 +20,5 @@ Online judge system - https://judge.softuni.org/
 ➡[Inheritance - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Inheritance%20-%20Exercise)
 
 ➡[Encapsulation - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Encapsulation%20-%20Lab)
+
+➡[Encapsulation - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Encapsulation%20-%20Exercise)
