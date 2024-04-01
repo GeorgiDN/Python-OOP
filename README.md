@@ -24,3 +24,5 @@ Online judge system - https://judge.softuni.org/
 ➡[Encapsulation - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Encapsulation%20-%20Exercise)
 
 ➡[Static and Class Methods - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Static%20and%20Class%20Methods%20-%20Lab)
+
+➡[Static and Class Methods - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Static%20and%20Class%20Methods%20-%20Exercise)
