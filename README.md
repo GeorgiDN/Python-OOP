@@ -28,3 +28,5 @@ Online judge system - https://judge.softuni.org/
 ➡[Static and Class Methods - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Static%20and%20Class%20Methods%20-%20Exercise)
 
 ➡[Polymorphism and Abstraction - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Polymorphism%20and%20Abstraction%20-%20Lab)
+
+➡[Polymorphism and Abstraction - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Polymorphism%20and%20Abstraction%20-%20Exercise)
