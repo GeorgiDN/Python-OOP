@@ -30,3 +30,5 @@ Online judge system - https://judge.softuni.org/
 ➡[Polymorphism and Abstraction - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Polymorphism%20and%20Abstraction%20-%20Lab)
 
 ➡[Polymorphism and Abstraction - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Polymorphism%20and%20Abstraction%20-%20Exercise)
+
+➡[Iterators and Generators - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Iterators%20and%20Generators%20-%20Lab)
