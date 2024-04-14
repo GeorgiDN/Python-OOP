@@ -34,3 +34,6 @@ Online judge system - https://judge.softuni.org/
 ➡[Iterators and Generators - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Iterators%20and%20Generators%20-%20Lab)
 
 ➡[Iterators and Generators - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Iterators%20and%20Generators%20-%20Exercise)
+
+➡[Decorators - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Decorators%20-%20Lab)
+
