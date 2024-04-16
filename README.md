@@ -37,3 +37,5 @@ Online judge system - https://judge.softuni.org/
 
 ➡[Decorators - Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Decorators%20-%20Lab)
 
+➡[Decorators - Exercise](https://github.com/GeorgiDN/Python-OOP)
+
