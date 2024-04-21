@@ -43,4 +43,5 @@ Online judge system - https://judge.softuni.org/
 
 ➡[Testing - Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Testing%20-%20Exercise)
 
+➡[Solid-Lab](https://github.com/GeorgiDN/Python-OOP/tree/main/Solid-Lab)
 
