@@ -47,3 +47,5 @@ Online judge system - https://judge.softuni.org/
 
 ➡[Solid-Exercise](https://github.com/GeorgiDN/Python-OOP/tree/main/Solid-Exercise)
 
+➡[OOP Exam Preparation](https://github.com/GeorgiDN/Python-OOP/tree/main/OOP%20-%20Exam%20Preparation)
+
