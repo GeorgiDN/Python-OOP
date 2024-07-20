@@ -1,79 +1,79 @@
 from project.railway_station import RailwayStation
 from collections import deque
-from unittest import main, TestCase
+from unittest import TestCase, main
 
 
-class TestsRailwayStation(TestCase):
+class TestRailwayStation(TestCase):
     def setUp(self):
-        self.station = RailwayStation("Station")
+        self.railway_station = RailwayStation("Station1")
 
     def test_init(self):
-        self.station.name = "Station"
-        self.station.arrival_trains = deque()
-        self.station.departure_trains = deque()
+        self.assertEqual(self.railway_station.name, "Station1")
+        self.assertEqual(self.railway_station.arrival_trains, deque())
+        self.assertEqual(self.railway_station.departure_trains, deque())
 
-    def test_name_setter_with_empty_string(self):
+    def test_name_with_empty_string_raise_message(self):
         with self.assertRaises(ValueError) as ve:
-            self.station.name = ''
-        self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+            self.railway_station = RailwayStation("")
+        message = "Name should be more than 3 symbols!"
+        self.assertEqual(message, str(ve.exception))
 
-    def test_name_setter_with_len_string_equal_to_one(self):
+    def test_name_with_1_letter_raise_message(self):
         with self.assertRaises(ValueError) as ve:
-            self.station.name = 'S'
-        self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+            self.railway_station = RailwayStation("S")
+        message = "Name should be more than 3 symbols!"
+        self.assertEqual(message, str(ve.exception))
 
-    def test_name_setter_with_len_string_equal_to_two(self):
+    def test_name_with_2_letters_raise_message(self):
         with self.assertRaises(ValueError) as ve:
-            self.station.name = 'St'
-        self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+            self.railway_station = RailwayStation("ST")
+        message = "Name should be more than 3 symbols!"
+        self.assertEqual(message, str(ve.exception))
 
-    def test_name_setter_with_len_string_equal_to_three(self):
+    def test_name_with_3_letters_raise_message(self):
         with self.assertRaises(ValueError) as ve:
-            self.station.name = 'Sta'
-        self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+            self.railway_station = RailwayStation("Sta")
+        message = "Name should be more than 3 symbols!"
+        self.assertEqual(message, str(ve.exception))
 
     def test_new_arrival_on_board(self):
-        self.station.new_arrival_on_board("train1")
-        self.assertEqual(self.station.arrival_trains, deque(["train1"]))
+        self.railway_station.new_arrival_on_board("Train1")
+        self.assertEqual(self.railway_station.arrival_trains, deque(["Train1"]))
 
-    def test_train_has_arrived_with_other_train_before(self):
-        self.station.arrival_trains = deque(["train1", "train2"])
-        res = self.station.train_has_arrived("train3")
-        self.assertEqual(res, f"There are other trains to arrive before train3.")
+    def test_train_has_arrived_add_train(self):
+        self.railway_station.new_arrival_on_board("Train1")
+        self.railway_station.new_arrival_on_board("Train2")
 
-    def test_train_has_arrived_with_train_info_equal_to_first_train(self):
-        self.station.new_arrival_on_board("train1")
-        self.station.new_arrival_on_board("train2")
-        res = self.station.train_has_arrived("train1")
-        self.assertEqual(res, "train1 is on the platform and will leave in 5 minutes.")
-        self.assertEqual(self.station.arrival_trains, deque(["train2"]))
-        self.assertEqual(self.station.departure_trains, deque(["train1"]))
+        result = self.railway_station.train_has_arrived("Train1")
+        message = f"Train1 is on the platform and will leave in 5 minutes."
+        self.assertEqual(result, message)
+        self.assertEqual(self.railway_station.arrival_trains, deque(["Train2"]))
+        self.assertEqual(self.railway_station.departure_trains, deque(["Train1"]))
 
-    def test_train_has_arrived_with_train_info_equal_to_the_only_train_in_the_list(self):
-        self.station.new_arrival_on_board("train1")
-        res = self.station.train_has_arrived("train1")
-        self.assertEqual(res, "train1 is on the platform and will leave in 5 minutes.")
-        self.assertEqual(self.station.arrival_trains, deque())
-        self.assertEqual(self.station.departure_trains, deque(["train1"]))
+    def test_train_has_arrived_with_another_train_before(self):
+        self.railway_station.new_arrival_on_board("Train1")
+        self.railway_station.new_arrival_on_board("Train2")
 
-    def test_train_has_left_with_empty_departure_trains(self):
-        res = self.station.train_has_left("train1")
-        self.assertFalse(res)
+        result = self.railway_station.train_has_arrived("Train2")
+        message = "There are other trains to arrive before Train2."
+        self.assertEqual(result, message)
 
-    def test_train_has_left_with_first_train_from_departure_trains_not_equal_to_train_info(self):
-        self.station.new_arrival_on_board("train1")
-        self.station.new_arrival_on_board("train2")
-        self.station.train_has_arrived("train1")
-        res = self.station.train_has_left("train3")
-        self.assertFalse(res)
+    def test_train_has_lest_return_false(self):
+        self.railway_station.new_arrival_on_board("Train1")
+        self.railway_station.new_arrival_on_board("Train2")
 
-    def test_train_has_left_with_first_train_from_departure_trains_equal_to_train_info(self):
-        self.station.new_arrival_on_board("train1")
-        self.station.new_arrival_on_board("train2")
-        self.station.train_has_arrived("train1")
-        res = self.station.train_has_left("train1")
-        self.assertTrue(res)
-        self.assertEqual(self.station.departure_trains, deque())
+        self.railway_station.train_has_arrived("Train1")
+        result = self.railway_station.train_has_left("Train2")
+        self.assertFalse(result)
+
+    def test_train_has_lest_return_true(self):
+        self.railway_station.new_arrival_on_board("Train1")
+        self.railway_station.new_arrival_on_board("Train2")
+
+        self.railway_station.train_has_arrived("Train1")
+        result = self.railway_station.train_has_left("Train1")
+        self.assertEqual(self.railway_station.departure_trains, deque())
+        self.assertTrue(result)
 
 
 if __name__ == '__main__':
@@ -82,12 +82,93 @@ if __name__ == '__main__':
 
 
 
+#######################################################################################################
+# from project.railway_station import RailwayStation
+# from collections import deque
+# from unittest import main, TestCase
+#
+#
+# class TestsRailwayStation(TestCase):
+#     def setUp(self):
+#         self.station = RailwayStation("Station")
+#
+#     def test_init(self):
+#         self.station.name = "Station"
+#         self.station.arrival_trains = deque()
+#         self.station.departure_trains = deque()
+#
+#     def test_name_setter_with_empty_string(self):
+#         with self.assertRaises(ValueError) as ve:
+#             self.station.name = ''
+#         self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+#
+#     def test_name_setter_with_len_string_equal_to_one(self):
+#         with self.assertRaises(ValueError) as ve:
+#             self.station.name = 'S'
+#         self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+#
+#     def test_name_setter_with_len_string_equal_to_two(self):
+#         with self.assertRaises(ValueError) as ve:
+#             self.station.name = 'St'
+#         self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+#
+#     def test_name_setter_with_len_string_equal_to_three(self):
+#         with self.assertRaises(ValueError) as ve:
+#             self.station.name = 'Sta'
+#         self.assertEqual("Name should be more than 3 symbols!", str(ve.exception))
+#
+#     def test_new_arrival_on_board(self):
+#         self.station.new_arrival_on_board("train1")
+#         self.assertEqual(self.station.arrival_trains, deque(["train1"]))
+#
+#     def test_train_has_arrived_with_other_train_before(self):
+#         self.station.arrival_trains = deque(["train1", "train2"])
+#         res = self.station.train_has_arrived("train3")
+#         self.assertEqual(res, f"There are other trains to arrive before train3.")
+#
+#     def test_train_has_arrived_with_train_info_equal_to_first_train(self):
+#         self.station.new_arrival_on_board("train1")
+#         self.station.new_arrival_on_board("train2")
+#         res = self.station.train_has_arrived("train1")
+#         self.assertEqual(res, "train1 is on the platform and will leave in 5 minutes.")
+#         self.assertEqual(self.station.arrival_trains, deque(["train2"]))
+#         self.assertEqual(self.station.departure_trains, deque(["train1"]))
+#
+#     def test_train_has_arrived_with_train_info_equal_to_the_only_train_in_the_list(self):
+#         self.station.new_arrival_on_board("train1")
+#         res = self.station.train_has_arrived("train1")
+#         self.assertEqual(res, "train1 is on the platform and will leave in 5 minutes.")
+#         self.assertEqual(self.station.arrival_trains, deque())
+#         self.assertEqual(self.station.departure_trains, deque(["train1"]))
+#
+#     def test_train_has_left_with_empty_departure_trains(self):
+#         res = self.station.train_has_left("train1")
+#         self.assertFalse(res)
+#
+#     def test_train_has_left_with_first_train_from_departure_trains_not_equal_to_train_info(self):
+#         self.station.new_arrival_on_board("train1")
+#         self.station.new_arrival_on_board("train2")
+#         self.station.train_has_arrived("train1")
+#         res = self.station.train_has_left("train3")
+#         self.assertFalse(res)
+#
+#     def test_train_has_left_with_first_train_from_departure_trains_equal_to_train_info(self):
+#         self.station.new_arrival_on_board("train1")
+#         self.station.new_arrival_on_board("train2")
+#         self.station.train_has_arrived("train1")
+#         res = self.station.train_has_left("train1")
+#         self.assertTrue(res)
+#         self.assertEqual(self.station.departure_trains, deque())
+#
+#
+# if __name__ == '__main__':
+#     main()
 
 
 
 
 
-
+##################################################################################################
 # from project.railway_station import RailwayStation
 # from collections import deque
 # from unittest import main, TestCase
