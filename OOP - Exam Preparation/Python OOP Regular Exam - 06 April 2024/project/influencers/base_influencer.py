@@ -1,12 +1,8 @@
 from abc import ABC, abstractmethod
 
-# from project.campaigns.base_campaign import BaseCampaign
-# from project.campaigns.high_budget_campaign import HighBudgetCampaign
-# from project.campaigns.low_budget_campaign import LowBudgetCampaign
-
 
 class BaseInfluencer(ABC):
-    HIGH_BUDGET_CAMPAIGN_MULTIPLIER = 2  # just for test
+    HIGH_BUDGET_CAMPAIGN_MULTIPLIER = 2
     LOW_BUDGET_CAMPAIGN_MULTIPLIER = 1
     TYPE = "BaseInfluencer"
     PAYMENT_PERCENT = 1.0
