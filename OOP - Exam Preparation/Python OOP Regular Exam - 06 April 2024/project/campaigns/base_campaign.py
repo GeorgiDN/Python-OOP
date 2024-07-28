@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class BaseCampaign(ABC):
     CAMPAIGN_IDS = []
-    RATE_INCREMENT = 1  # just example value
+    RATE_INCREMENT = 1
 
     def __init__(self, campaign_id: int, brand: str, budget: float, required_engagement: float):
         self.campaign_id = campaign_id
