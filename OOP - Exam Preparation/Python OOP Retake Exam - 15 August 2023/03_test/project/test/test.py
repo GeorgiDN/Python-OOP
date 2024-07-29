@@ -185,13 +185,6 @@ if __name__ == '__main__':
 #         result = self.trip2.is_family
 #         self.assertTrue(result)
 #
-#     #DOES not work with this test
-#     # def test_book_a_trip_with_invalid_destination_return_message(self):
-#     #     self.trip = Trip(100000.0, 2, True)
-#     #     result = self.trip.book_a_trip("Invalid")
-#     #     expected_message = 'This destination is not in our offers, please choose a new one!'
-#     #     self.assertTrue(result, expected_message)
-#
 #     def test_book_trip_with_invalid_destination_return_message_is_family_true(self):
 #         trip = Trip(1000.0, 2, True)
 #         res = trip.book_a_trip("Makedoniq")
